@@ -1,0 +1,29 @@
+{
+  "name": "practice-7_razorpay",
+  "version": "1.0.0",
+  "description": "Payment gateway Integration",
+  "main": "server.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express": "^4.17.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.10",
+    "razorpay": "^2.8.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jahnavi02/Payment-Gateway-Integration.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/jahnavi02/Payment-Gateway-Integration/issues"
+  },
+  "homepage": "https://github.com/jahnavi02/Payment-Gateway-Integration#readme"
+}

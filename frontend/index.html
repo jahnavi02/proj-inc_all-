@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="Payment gateway integration in nodejs"
+        author="Jahnavi" />
+        <title> Razorpay gateway integration</title>
+    </head>
+
+    <body>
+        <hr/>
+        <h2>Trial for payment through html</h2>
+  
+        <span> Cost:- 499 Rupees 
+            <button id="pay-button" >
+                Buy Now
+            </button> 
+        </span>
+        <hr/>
+    </body>
+    <!--Inside index.html -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+var options = {
+	"key": "rzp_test_wUoU7M4Za84fAW",
+	"amount": "49900",
+	"currency": "INR",
+	"name": "Dummy",
+	"description": "Pay & Checkout",
+	"order_id": "order_Iqj9TNMQ7W3K2U",
+	"handler": function (response){
+		console.log(response)
+		alert("This step of Payment Succeeded");
+	},
+	"prefill": {
+		//Here we are prefilling random contact
+		"contact":"987654321",
+		//name and email id, so while checkout
+		"name": "Jahnavi",
+		"email": "jahnavi@example.com" 
+	},
+	"theme": {
+		"color": "#2300a3"
+	}
+};
+
+var razorpayObject = new Razorpay(options);
+console.log(razorpayObject);
+razorpayObject.on('payment.failed', function (response){
+		console.log(response);
+		alert("This step of Payment Failed");
+});
+	
+document.getElementById('pay-button').onclick = function(e){
+	razorpayObject.open();
+	e.preventDefault();
+}
+</script>
+
+</html>
